@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <test-component title="My ToDo-list" :todos="todos">
+        <template slot="item" scope="props">
+            <li>{{ props.todo.text }}</li>
+        </template>
+    </test-component>
+</div>
+
+<script>
+    Vue.component('test-component', {
+        template: `
+            <div>
+                <h1>{{ title }}</h1>
+                <ul>
+                    <slot name="item" v-for="todo in todos" :todo="todo"></slot>
+                </ul>
+            </div>
+        `,
+        props: ['title', 'todos']
+    });
+
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            todos: [
+                { text: 'Buy milk' },
+                { text: 'Learn Vue.js' },
+                { text: 'Never stop learning' }
+            ]
+        }
+    });
+</script>

@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <input type="text" @keyup.enter="addNewTodo" v-model="newTodoText">
+    
+    <hr>
+
+    <template v-for="todo in todos">
+        <span>{{ todo.text }}</span> - <span>{{ todo.createDate.getHours() + ':' + todo.createDate.getMinutes() }}</span>
+        <br>
+    </template>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            newTodoText: '',
+            todos: []
+        },
+        methods: {
+            addNewTodo: function() {
+                this.todos.push({
+                    text: this.newTodoText,
+                    createDate: new Date()
+                });
+
+                this.newTodoText = '';
+            }
+        }
+    });
+</script>

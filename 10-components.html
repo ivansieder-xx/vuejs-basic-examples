@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <login-form></login-form>
+    <login-form></login-form>
+    <login-form></login-form>
+    <login-form></login-form>
+    <login-form></login-form>
+    <login-form></login-form>
+</div>
+
+<script>
+    Vue.component('login-form', {
+        template: `
+            <div>
+                <label for="email">eMail: </label>
+                <input type="email">
+
+                <br>
+
+                <label for="password">Password: </label>
+                <input type="password">
+
+                <br>
+
+                <button>Log in</button>
+            </div>
+        `
+    });
+
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            currentView: 'login-form'
+        },
+        methods: {
+            loginDone: function() {
+                this.currentView = 'welcome-area'
+            }
+        }
+    });
+</script>

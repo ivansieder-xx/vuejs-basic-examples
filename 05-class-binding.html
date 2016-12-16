@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: grey;
+    }
+
+    .active {
+        background-color: green;
+    }
+
+    .inactive {
+        background-color: orange;
+    }
+</style>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <div class="box" v-bind:class="{ active: isActive, inactive: !isActive }"></div>
+
+    <br><br>
+
+    <div class="box" v-bind:style="{ transform: 'rotate(7deg)' }"></div>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            isActive: null
+        }
+    });
+</script>

@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    v-model: <input type="text" v-model="message">
+    
+    <br>
+    
+    Custom: <input type="text" :value="message" @input="message = $event.target.value">
+
+    <br>
+
+    Result: {{ message }}
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            message: ''
+        }
+    });
+</script>

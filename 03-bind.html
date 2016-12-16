@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <label for="text">Text:</label>
+    <input type="text" v-model="text">
+    
+    <br>
+
+    <label for="url">URL:</label>
+    <input type="text" v-model="url">
+
+    <br>
+
+    <label>Target:</label>
+    <input type="radio" name="target" v-model="target" value="_blank" id="blank"><label for="blank">_blank</label>
+    <input type="radio" name="target" v-model="target" value="_self" id="self"><label for="self">_self</label>
+    <input type="radio" name="target" v-model="target" value="_parent" id="parent"><label for="parent">_parent</label>
+    <input type="radio" name="target" v-model="target" value="_top" id="top"><label for="top">_top</label>
+
+    <br>
+
+    <a v-bind:href="url" v-bind:target="target">{{ text }}</a>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#demo',
+        data: {
+            text: null,
+            url: null,
+            target: null
+        }
+    });
+</script>

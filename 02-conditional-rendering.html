@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="UTF-8">
+<title>Vue.js demo</title>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="demo">
+    <button v-on:click="spanVisible = !spanVisible" type="button">Toggle</button>
+        
+    <br>
+
+    <span v-show="spanVisible">Toggled on v-show</span>
+
+    <hr>
+
+    <span v-if="spanVisible">TRUE - Toggled using v-if</span>
+    <span v-else>FALSE - Toggled using v-if</span>
+
+    <hr>
+
+    <template v-if="spanVisible">
+        <h1>More elements</h1>
+        <p>With v-if, you can also display more elements than just a single one</p>
+    </template>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#demo',
+        data () {
+return {
+spanVisible: true
+}
+},
+methods: {
+toogle () {
+this.spanVisible = !this.spanVisible
+}
+
+}
+    });
+</script>
