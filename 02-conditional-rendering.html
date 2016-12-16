@@ -27,16 +27,8 @@
 <script>
     let vm = new Vue({
         el: '#demo',
-        data () {
-return {
-spanVisible: true
-}
-},
-methods: {
-toogle () {
-this.spanVisible = !this.spanVisible
-}
-
-}
+        data: {
+            spanVisible: true
+        }
     });
 </script>

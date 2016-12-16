@@ -9,3 +9,6 @@ Clone this repo and open the various files in your browser. The files include th
 
 ## Contribution
 Feel free to fork this repo, add examples, enhance the existing ones and open a PR to get it merged back. If you find anything now working properly, don't hesitate to open up an issue.
+
+## Contact
+For any question, which doesn't belong into the issues, feel free to contact me on Twitter [@ivansieder](https://twitter.com/ivansieder) or via eMail [ivan@sieder.xyz](mailto:ivan@sieder.xyz)
