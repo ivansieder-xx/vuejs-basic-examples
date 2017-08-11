@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <title>Vue.js demo</title>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue"></script>
 
 <div id="demo">
     <input type="text" @keyup.enter="addNewTodo" v-model="newTodoText">
@@ -16,14 +16,14 @@
 </div>
 
 <script>
-    let vm = new Vue({
+    const vm = new Vue({
         el: '#demo',
         data: {
             newTodoText: '',
             todos: []
         },
         methods: {
-            addNewTodo: function() {
+            addNewTodo() {
                 this.todos.push({
                     text: this.newTodoText,
                     createDate: new Date()
@@ -32,5 +32,5 @@
                 this.newTodoText = '';
             }
         }
-    });
+    })
 </script>

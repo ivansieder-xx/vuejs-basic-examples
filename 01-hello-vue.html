@@ -2,17 +2,17 @@
 <meta charset="UTF-8">
 <title>Vue.js demo</title>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue"></script>
 
 <div id="demo">
     {{ message }}
 </div>
 
 <script>
-    let vm = new Vue({
+    const vm = new Vue({
         el: '#demo',
         data: {
             message: 'Hello Vue.js'
         }
-    });
+    })
 </script>

@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <title>Vue.js demo</title>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue"></script>
 
 <div id="demo">
     <div v-for="item in items">
@@ -11,7 +11,7 @@
 </div>
 
 <script>
-    let vm = new Vue({
+    const vm = new Vue({
         el: '#demo',
         data: {
             items: [
@@ -21,5 +21,5 @@
                 { id: 4, text: 'Use Vue.js in prod' }
             ]
         }
-    });
+    })
 </script>
